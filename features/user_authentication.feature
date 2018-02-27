@@ -8,7 +8,7 @@ Feature: User is authenticated for both sign up and login.
     Given the following user exists
       |  email    | password    | password_confirmation |
       | jf@ca.com | password123 | password123           |
-    And I am on the "Landing" page
+    And I am on the Landing page
 
   Scenario: User signs up for an account
     Given I click on "Sign up"
