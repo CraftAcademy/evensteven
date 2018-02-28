@@ -11,11 +11,11 @@ Feature: User is sent to a dashboard where they can create or join a group.
     And I am on the Landing page
 
   Scenario: User signs up and is sent to dashboard page
-    Given I click on "Sign up"
+    Given I click on "Register"
     When I fill in "Email" with "hacker@holger.com"
     And I fill in "Password" with "password12"
     And I fill in "Password confirmation" with "password12"
-    And I click on "Create account"
+    And I click on "Sign up"
     Then I am on the Dashboard page
     And I should see "Create a group" button
     And I should see "Join a group" button
@@ -30,10 +30,10 @@ Feature: User is sent to a dashboard where they can create or join a group.
     And I should be on the Sign in page
 
   Scenario: User fails to sign up and is redirected
-    Given I click on "Sign up"
+    Given I click on "Register"
     When I fill in "Email" with "hacker@holger.com"
     And I fill in "Password" with "password12"
     And I fill in "Password confirmation" with "password"
-    And I click on "Create account"
+    And I click on "Sign up"
     Then I should see the text "Password confirmation doesn't match"
     And I should be on the Sign up page

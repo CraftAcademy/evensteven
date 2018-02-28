@@ -16,7 +16,7 @@ Feature: User is authenticated for both sign up and login.
     And I fill in "Password" with "password12"
     And I fill in "Password confirmation" with "password12"
     And I click on "Sign up"
-    Then I should see the message "Welcome! You have signed up successfully."
+    Then I should see the text "Welcome! You have signed up successfully."
     Then "hacker@holger.com" should be saved in the database
 
   Scenario: User logs in from an existing account
@@ -34,14 +34,14 @@ Feature: User is authenticated for both sign up and login.
     And I fill in "Password" with "password12"
     And I fill in "Password confirmation" with "password"
     And I click on "Sign up"
-    Then I should see the message "Password confirmation doesn't match"
+    Then I should see the text "Password confirmation doesn't match"
 
   Scenario: User fails to enter email field
     Given I click on "Register"
     And I fill in "Password" with "password12"
     And I fill in "Password confirmation" with "password12"
     And I click on "Sign up"
-    Then I should see the message "Email can't be blank"
+    Then I should see the text "Email can't be blank"
 
   Scenario: User logs in from an account that doesn't exist
     Given I click on "Login"
