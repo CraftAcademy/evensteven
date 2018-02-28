@@ -26,7 +26,7 @@ Feature: User is sent to a dashboard where they can create or join a group.
     When I fill in "Email" with "david@ca.com"
     And I fill in "Password" with "password123"
     And I click on "Log in"
-    Then I should see the message "Invalid Email or password."
+    Then I should see the text "Invalid Email or password."
     And I should be on the Sign in page
 
   Scenario: User fails to sign up and is redirected
@@ -35,5 +35,5 @@ Feature: User is sent to a dashboard where they can create or join a group.
     And I fill in "Password" with "password12"
     And I fill in "Password confirmation" with "password"
     And I click on "Create account"
-    Then I should see the message "Password confirmation doesn't match"
+    Then I should see the text "Password confirmation doesn't match"
     And I should be on the Sign up page

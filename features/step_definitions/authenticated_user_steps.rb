@@ -20,7 +20,7 @@ When("I fill in {string} with {string}") do |field, value|
   fill_in(field, with: value)
 end
 
-Then("I should see the message {string}") do |message|
+Then("I should see the text {string}") do |message|
   expect(page).to have_content message
 end
 
