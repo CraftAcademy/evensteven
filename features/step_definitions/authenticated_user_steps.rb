@@ -4,8 +4,12 @@ Given("the following user exists") do |table|
   end
 end
 
-Given("I am on the {string} page") do |string|
+Given("I am on the Landing page") do
   visit root_path
+end
+
+Then("I should be on the Landing page") do
+  expect(page.current_path).to eq root_path
 end
 
 When("I click on {string}") do |link_name|
@@ -16,8 +20,8 @@ When("I fill in {string} with {string}") do |field, value|
   fill_in(field, with: value)
 end
 
-Then("I should see the message {string}") do |message|
-  expect(page).to have_content message
+Then("I should see the text {string}") do |text|
+  expect(page).to have_content text
 end
 
 Then("{string} should be saved in the database") do |email|
