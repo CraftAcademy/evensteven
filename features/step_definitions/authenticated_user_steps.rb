@@ -20,8 +20,8 @@ When("I fill in {string} with {string}") do |field, value|
   fill_in(field, with: value)
 end
 
-Then("I should see the text {string}") do |message|
-  expect(page).to have_content message
+Then("I should see the text {string}") do |text|
+  expect(page).to have_content text
 end
 
 Then("{string} should be saved in the database") do |email|
