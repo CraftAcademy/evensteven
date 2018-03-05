@@ -5,7 +5,9 @@ class ExpensesController < ApplicationController
     @group = Group.find(params[:group_id])
     all_group_expenses = extract_user_expenses(@group)
     total_amounts_owed = calculate_amounts(all_group_expenses)
-    @output = split(all_group_expenses, total_amounts_owed)
+    output = split(all_group_expenses, total_amounts_owed)
+    @group.output = output
+    @group.save
     render 'groups/show'
   end
 
@@ -39,7 +41,7 @@ class ExpensesController < ApplicationController
   def split(all_group_expenses, total_amounts_owed)
     lenders = []
     debtors = []
-    output = []
+    output = ["Total expenses per person: #{@group_average}kr"]
 
     all_group_expenses.each do |email, amount|
       next if total_amounts_owed[email] == 0
